@@ -54,6 +54,9 @@ function evaluate()
   -- check for lava or water
   if badItems[turtle.inspect()] then turtle.place() end
 
+  --if safe, move forward
+  turtle.forward()
+
   --check for ore foward, up, and down
   if goodItems[turtle.inspect()] then 
     turtle.dig()
@@ -78,5 +81,10 @@ function evaluate()
     turtle.dig()
     evaluate() 
   end
+
+  -- if no ore
+  turtle.dig()
+  evaluate()
 end
+
 
