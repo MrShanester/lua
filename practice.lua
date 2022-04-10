@@ -22,4 +22,36 @@ function fizz(input)
   end
 end
 
-print(fizz(8))
+-- print(fizz(8))
+
+-- commands the turtle to mine the block in front of it if it is unable to move forward
+
+
+while not turtle.forward() do
+  turtle.dig()
+end
+
+-- identifies if the block in front of it is smooth stone or not. If not, it places a block of cobblestone in the hole.
+
+badItems = {
+  water = true,
+  lava = true,
+}
+
+goodItems = {
+  ironOre = true,
+  coal = true,
+  copperOre = true,
+  goldOre = true,
+  diamondOre = true,
+  redstoneOre = true,
+  lapisLazuli = true
+}
+
+if badItems[turtle.inspect()] then 
+  turtle.place
+end
+
+function evaluate()
+
+end
