@@ -27,9 +27,9 @@ end
 -- commands the turtle to mine the block in front of it if it is unable to move forward
 
 
-while not turtle.forward() do
-  turtle.dig()
-end
+-- while not turtle.forward() do
+--   turtle.dig()
+-- end
 
 -- identifies if the block in front of it is smooth stone or not. If not, it places a block of cobblestone in the hole.
 
@@ -48,10 +48,35 @@ goodItems = {
   lapisLazuli = true
 }
 
-if badItems[turtle.inspect()] then 
-  turtle.place
-end
+
 
 function evaluate()
+  -- check for lava or water
+  if badItems[turtle.inspect()] then turtle.place() end
 
+  --check for ore foward, up, and down
+  if goodItems[turtle.inspect()] then 
+    turtle.dig()
+    evaluate()
+  elseif goodItems[turtle.inspectUp()] then 
+    turtle.dig()
+    evaluate()
+  elseif goodItems[turtle.inspectDown()] then 
+    turtle.dig()
+    evaluate()
+  end
+
+  --check for ore right
+  turtle.turnRight()
+  if goodItems[turtle.inspect()] then 
+    turtle.dig()
+    evaluate() 
+  end
+  --check for ore left
+  for i=1,2,1 do turtle.turnLeft() end
+  if goodItems[turtle.inspect()] then 
+    turtle.dig()
+    evaluate() 
+  end
 end
+
