@@ -7,10 +7,16 @@ function gather()
   turtle.forward()
   turtle.turnRight()
   for i = 1,9,1 do
-    if turtle.inspectDown() == wheat then turtle.digDown() end
+    if turtle.inspectDown() == wheat then 
+      turtle.digDown() 
+      turtle.placeDown()
+    end
     for i = 1,9,1 do
       turtle.forward()
-      if turtle.inspectDown() == wheat then turtle.digDown() end
+      if turtle.inspectDown() == wheat then 
+        turtle.digDown() 
+        turtle.placeDown()
+      end
     end
     if i % 2 == 0 then
       turtle.turnRight()
@@ -35,7 +41,14 @@ function gather()
     turtle.select(i)
     turtle.dropDown()
   end
+  turtle.select(1)
   gather()
 end
 
 gather()
+
+-- Idea for mining turtle.
+-- on the goBack function add an inspect feature that can tell if a chest is in front of it or not
+for i = 2,16,1 do
+  turtle.select
+  turtle.drop()
