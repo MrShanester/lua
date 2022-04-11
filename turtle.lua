@@ -9,7 +9,7 @@ function gather()
   turtle.turnRight()
   for i = 1,9,1 do
     if turtle.inspectDown() == wheat then turtle.digDown() end
-    for i = 1,7,1 do
+    for i = 1,9,1 do
       turtle.forward()
       if turtle.inspectDown() == wheat then turtle.digDown() end
     end
@@ -28,7 +28,7 @@ function gather()
     turtle.forward()
   end
   turtle.turnRight()
-  for i = 7,10,1 do
+  for i = 8,10,1 do
     turtle.forward()
   end
   turtle.turnRight()
