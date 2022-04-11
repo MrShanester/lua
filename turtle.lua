@@ -1,6 +1,5 @@
 -- Wheat Farm Steward
--- Starts Above Chest
--- Farm consists of 64 tilled blocks spanning 8 rows of 8-block long lanes with one lane of water in the middle
+-- Farm consists of 9x9 square with one water block in the center. place a chest on the lower left corner of the farm, and place the turtle on top of it, facing the wheat
 
 wheat = "minecraft:wheat"
 
