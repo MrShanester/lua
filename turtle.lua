@@ -51,7 +51,7 @@ gather()
 -- on the goBack function add an inspect feature that can tell if a chest is in front of it or not
 for i = 2,16,1 do
   turtle.select(i)
-  turtle.drop()
+  if turtle.drop() == false then stall(input) end
 end
 turtle.turnLeft()
 turtle.turnLeft()
@@ -62,3 +62,10 @@ turtle.turnRight()
 turtle.forward()
 turtle.turnLeft()
 diggyBiggyHole(input)
+
+function stall(input)
+  print(input)
+  while(true) do
+    turtle.turnLeft()
+  end
+end
