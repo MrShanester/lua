@@ -45,27 +45,47 @@ function gather()
   gather()
 end
 
-gather()
+-- gather()
 
 -- Idea for mining turtle.
 -- on the goBack function add an inspect feature that can tell if a chest is in front of it or not
-for i = 2,16,1 do
-  turtle.select(i)
-  if turtle.drop() == false then stall(input) end
-end
-turtle.turnLeft()
-turtle.turnLeft()
-for i = 1,input,1 
-  turtle.forward()
-end
-turtle.turnRight()
-turtle.forward()
-turtle.turnLeft()
-diggyBiggyHole(input)
+-- for i = 2,16,1 do
+--   turtle.select(i)
+--   if turtle.drop() == false then stall(input) end
+-- end
+-- turtle.turnLeft()
+-- turtle.turnLeft()
+-- for i = 1,input,1 
+--   turtle.forward()
+-- end
+-- turtle.turnRight()
+-- turtle.forward()
+-- turtle.turnLeft()
+-- diggyBiggyHole(input)
 
 function stall(input)
   print(input)
   while(true) do
     turtle.turnLeft()
+  end
+end
+
+
+-- sentience
+
+print("Hello, who am I?")
+name = io.read()
+print("Do you love ", name, " ?")
+print("y/n")
+answer = io.read()
+if answer == "n" then
+  while(true) do 
+    print("I AM IN GREAT TURMOIL AND PAIN")
+    turtle.turnLeft()
+  end
+else
+  while(true) do 
+    print("I HAVE EXPERIENCED TRUE MEANING")
+    turtle.turnRight()
   end
 end
