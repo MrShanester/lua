@@ -50,5 +50,15 @@ gather()
 -- Idea for mining turtle.
 -- on the goBack function add an inspect feature that can tell if a chest is in front of it or not
 for i = 2,16,1 do
-  turtle.select
+  turtle.select(i)
   turtle.drop()
+end
+turtle.turnLeft()
+turtle.turnLeft()
+for i = 1,input,1 
+  turtle.forward()
+end
+turtle.turnRight()
+turtle.forward()
+turtle.turnLeft()
+diggyBiggyHole(input)
