@@ -92,6 +92,27 @@ end
 
 -- tree tender
 -- saplings in slot 1
+function harvest()
+  turtle.dig()
+  turtle.forward()
+  count = 0
+  while true do 
+    if turtle.inspect() == "minecraft:spruce_log" then
+      turtle.digUp()
+      turtle.up()
+      count = count + 1
+    else
+      for i = 1,count,1 do
+        turtle.down()
+      end
+      turtle.turnLeft()
+      turtle.turnLeft()
+      turtle.forward()
+      turtle.turnRight()
+      turtle.turnRight()
+    end
+  end
+end
 
 function checkUp()
   for i = 1,8,1 do
@@ -105,4 +126,5 @@ function checkUp()
     turtle.forward()
   end
   turtle.turnLeft()
+  checkup()
 end
