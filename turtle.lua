@@ -89,3 +89,20 @@ else
     turtle.turnRight()
   end
 end
+
+-- tree tender
+-- saplings in slot 1
+
+function checkUp()
+  for i = 1,8,1 do
+    turtle.forward()
+    turtle.turnLeft()
+    if turtle.inspect() == "minecraft:spruce_log" then harvest() end
+    turtle.turnRight()
+    turtle.turnRight()
+    if turtle.inspect() == "minecraft:spruce_log" then harvest() end
+    turtle.turnLeft()
+    turtle.forward()
+  end
+  turtle.turnLeft()
+end
