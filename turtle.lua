@@ -97,7 +97,7 @@ function harvest()
   turtle.forward()
   count = 0
   while true do 
-    if turtle.inspect() == "minecraft:spruce_log" then
+    if turtle.inspectUp() == "minecraft:spruce_log" then
       turtle.digUp()
       turtle.up()
       count = count + 1
@@ -128,3 +128,5 @@ function checkUp()
   turtle.turnLeft()
   checkup()
 end
+
+checkup()
